@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <br><br>
+    <div id="app" class="container">
+        <h2>Computed Porperties</h2>
+        <form action="" @submit.prevent="submit">
+            <input type="text" v-model="form.firstName">
+            <input type="text" v-model="form.lastName">
+        </form>
+        {{ fullName }}
+    </div>
+    <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                form :{
+                    firstName: '',
+                    lastName: ''
+                }
+            },
+            computed:{
+                fullName(){
+                    return this.form.firstName + ' ' + this.form.lastName;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
